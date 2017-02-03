@@ -220,12 +220,11 @@ out:
 	return length;
 }
 #else
-#define sel_write_enforce NULL
 #endif
 
 static const struct file_operations sel_enforce_ops = {
 	.read		= sel_read_enforce,
-	.write		= sel_write_enforce,
+	.write		= NULL,
 	.llseek		= generic_file_llseek,
 };
 
